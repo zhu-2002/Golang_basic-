@@ -1,2 +1,2 @@
-# Golang_basic-
+# Golang_basics
 Golang basic grammar practice records
