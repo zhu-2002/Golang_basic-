@@ -1,8 +1,8 @@
 package main
 
 import (
-	"fmt"
-	"os"
+	_ "fmt"
+	_ "os"
 )
 
 //import (
@@ -359,8 +359,8 @@ func main() {
 }*/
 
 // 读取和写入文件
+/*
 func main() {
-
 	// 追加模式，编辑权限为777
 	fp, err := os.OpenFile("./test.txt", os.O_APPEND, os.ModePerm)
 	// 打开失败
@@ -379,7 +379,8 @@ func main() {
 	for {
 		buf,_,errReader := reader.ReadLine()
 	}
-	*/
+*/
+/*
 	_, errWrite := fp.WriteString("This is a test !\n")
 	// 写入失败
 	if errWrite != nil {
@@ -392,3 +393,4 @@ func main() {
 	// 关闭文件
 	defer fp.Close()
 }
+*/
