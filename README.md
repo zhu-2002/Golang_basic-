@@ -232,7 +232,7 @@ func main() {
 }
 ```
 
-## 闭包
+## 闭包       
 
 所谓的闭包是指有权访问另一个函数作用域中的变量的函数，就是在一个函数内部创建另一个函数。**在Go语言里，所有的匿名函数(Go语言规范中称之为函数字面量)都是闭包。**
 
@@ -398,8 +398,6 @@ func main() {
 }
 ```
 
-## 泛型
-
 ## 面向对象
 
 ### 继承
@@ -551,7 +549,7 @@ type SayHi interface {
 	//ttuh.SayHello()
 
 	// 空接口
-	// 可以切换成不同类型，可用于函数参数
+	// 可以切换成不同类型，可用于函数参数,现在可以直接用any
 	var i interface{}
 	i = 1
 	fmt.Println(i)
@@ -674,7 +672,27 @@ func main() {
 }
 ```
 
+## 泛型
 
+```go
+/* 泛型 */
+// 在名称后面接[名称 类型] 即可
+// 可以用于接口、结构体、方法
+type Number interface {
+	int | int8 | int16 | int32 | int64 | float32 | float64
+}
+
+func Sum[T Number](data ...T) T {
+	var res T
+	for _, val := range data {
+		res = res + val
+	}
+	return res
+}
+func main() {
+	fmt.Println(Sum(1.3, 2.2))
+}
+```
 
 
 

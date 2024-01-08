@@ -394,3 +394,21 @@ func main() {
 	defer fp.Close()
 }
 */
+
+/* 泛型 */
+// 在名称后面接[名称 类型] 即可
+// 可以用于接口、结构体、方法
+/*type Number interface {
+	int | int8 | int16 | int32 | int64 | float32 | float64
+}
+
+func Sum[T Number](data ...T) T {
+	var res T
+	for _, val := range data {
+		res = res + val
+	}
+	return res
+}
+func main() {
+	fmt.Println(Sum(1.3, 2.2))
+}*/
