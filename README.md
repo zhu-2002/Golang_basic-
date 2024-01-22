@@ -1,12 +1,10 @@
-# Golang基础语法练习
+# Golang基础语法与框架入门
 
 > @author	Zenos
 >
 > 行百里者半九十
 
 [TOC]
-
-
 
 ## 变量
 
@@ -250,6 +248,12 @@ func main() {
 ```
 
 ## 工程管理
+
+使用代理如下：
+
+```
+GOPROXY=https://goproxy.io,direct
+```
 
 为了更好的管理项目中的文件，要求将文件都要放在相应的文件夹中。GO语言规定如下的文件夹如下：
 
@@ -693,6 +697,39 @@ func main() {
 	fmt.Println(Sum(1.3, 2.2))
 }
 ```
+
+## GIN
+
+在Gin中，用Engine（类似server）来监听一个端口，是一个逻辑上的web服务器。一个Go进程可以创建多个Engine。
+
+```go
+package main
+
+import (
+	"github.com/gin-gonic/gin"
+	"net/http"
+)
+
+func main() {
+	r := gin.Default()
+	r.GET("/hello", func(c *gin.Context) {
+		c.String(http.StatusOK, "hello")
+	})
+	r.Run(":8080") // 监听并在 0.0.0.0:8080 上启动服务
+}
+```
+
+## GORM
+
+GORM是一个Go语言的ORM框架。支持多种数据库，包括MySQL、PostgreSQL等；
+
+支持简单查询、事务、关联关系；支持钩子；支持自动迁移工具。
+
+```go
+
+```
+
+
 
 
 
